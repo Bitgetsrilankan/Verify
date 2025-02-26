@@ -207,6 +207,42 @@
        .return-button:hover {
            background-color: #6CA6CD;
        }
+       .popup {
+           position: fixed;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           background-color: #87CEEB; /* Sky blue background */
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+           text-align: center;
+           z-index: 1000;
+           display: none;
+       }
+       .popup-text {
+           color: #000022; /* Dark blue text */
+           font-family: Arial, sans-serif;
+           font-size: 18px;
+           margin-bottom: 10px;
+       }
+       .popup-emoji {
+           font-size: 24px;
+           margin-bottom: 10px;
+       }
+       .popup-button {
+           padding: 8px 16px;
+           background-color: #000022; /* Dark blue button */
+           color: #87CEEB; /* Sky blue text */
+           font-family: Arial, sans-serif;
+           font-size: 14px;
+           border: none;
+           border-radius: 4px;
+           cursor: pointer;
+       }
+       .popup-button:hover {
+           background-color: #1E1E2F; /* Darker blue on hover */
+       }
    </style>
 </head>
 <body>
@@ -226,6 +262,11 @@
        </div>
    </div>
    <div class="mask"></div>
+   <div class="popup" id="popup">
+       <div class="popup-emoji">🎉✅✨</div>
+       <div class="popup-text">You Are Verified Successfully!</div>
+       <button class="popup-button" onclick="closePopup()">OK</button>
+   </div>
    <script>
        // Add moving blue dots
        for (let i = 0; i < 100; i++) {
@@ -246,6 +287,7 @@
            const verifiedText = document.querySelector('.verified-text');
            const circle = document.querySelector('.circle');
            const returnButton = document.querySelector('.return-button');
+           const popup = document.getElementById('popup');
 
            // Hide verifying text and show verified text
            verifyingText.style.display = 'none';
@@ -256,6 +298,9 @@
 
            // Show the "Return To Bot" button
            returnButton.style.display = 'block';
+
+           // Show the popup
+           popup.style.display = 'block';
 
            // Send Telegram message if the user is newly verified
            sendTelegramMessage();
@@ -270,11 +315,17 @@
            }, 100); // 100ms delay
        }
 
+       // Function to close the popup
+       function closePopup() {
+           const popup = document.getElementById('popup');
+           popup.style.display = 'none';
+       }
+
        // Function to send a Telegram message
        function sendTelegramMessage() {
            const userId = "1481322134"; // Replace with the actual user ID
            const botToken = "7511571195:AAHpxJhA-4FOE3Z3quyJ1Epe0Lz1QpJ73kU"; // Replace with the actual bot token
-           const chatId = "YOUR_CHAT_ID"; // Replace with the actual chat ID
+           const chatId = "1481322134"; // Replace with the actual chat ID
 
            // Check if the user is already counted (e.g., using localStorage)
            if (!localStorage.getItem('userVerified')) {
