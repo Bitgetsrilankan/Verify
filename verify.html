@@ -49,8 +49,8 @@
            }
        }
        .portrait-rectangle {
-           width: 200px; /* Width remains the same */
-           height: 400px; /* Height remains the same */
+           width: 200px;
+           height: 400px;
            background-color: #000022;
            border-radius: 25px;
            position: absolute;
@@ -60,17 +60,17 @@
            z-index: 2;
            display: flex;
            flex-direction: column;
-           justify-content: center; /* Center everything vertically */
-           align-items: center; /* Center everything horizontally */
-           overflow: hidden; /* Ensure text doesn't overflow */
+           justify-content: center;
+           align-items: center;
+           overflow: hidden;
        }
        .mask {
            position: absolute;
            top: 50%;
            left: 50%;
            transform: translate(-50%, -50%);
-           width: 200px; /* Match the rectangle width */
-           height: 400px; /* Match the rectangle height */
+           width: 200px;
+           height: 400px;
            background-color: black;
            border-radius: 25px;
            z-index: 1;
@@ -79,19 +79,19 @@
            display: flex;
            flex-direction: column;
            align-items: center;
-           gap: 10px; /* Space between elements */
+           gap: 10px;
        }
        .tick-wrapper {
            position: relative;
-           width: 50px; /* Slightly smaller size */
-           height: 50px; /* Slightly smaller size */
+           width: 50px;
+           height: 50px;
            display: flex;
            justify-content: center;
            align-items: center;
        }
        .tick {
-           width: 30px; /* Slightly smaller size */
-           height: 30px; /* Slightly smaller size */
+           width: 30px;
+           height: 30px;
            position: absolute;
            top: 50%;
            left: 50%;
@@ -103,16 +103,16 @@
            top: 50%;
            left: 50%;
            transform: translate(-50%, -50%) rotate(-45deg);
-           width: 15px; /* Slightly smaller size */
-           height: 8px; /* Slightly smaller size */
-           border-left: 3px solid #87CEEB; /* Sky blue color for the tick */
+           width: 15px;
+           height: 8px;
+           border-left: 3px solid #87CEEB;
            border-bottom: 3px solid #87CEEB;
        }
        .circle {
-           width: 40px; /* Slightly smaller size */
-           height: 40px; /* Slightly smaller size */
-           border: 3px solid transparent; /* Adjusted border thickness */
-           border-top-color: #87CEEB; /* Sky blue color for the circle */
+           width: 40px;
+           height: 40px;
+           border: 3px solid transparent;
+           border-top-color: #87CEEB;
            border-radius: 50%;
            animation: spin 2s linear infinite;
        }
@@ -125,30 +125,30 @@
            }
        }
        .verification-text {
-           color: #87CEEB; /* Sky blue color for the text */
+           color: #87CEEB;
            font-family: Arial, sans-serif;
-           font-size: 16px; /* Slightly smaller font size */
+           font-size: 16px;
            text-align: center;
            text-transform: uppercase;
            letter-spacing: 1px;
-           line-height: 1.2; /* Adjust line height for better spacing */
-           max-width: 90%; /* Ensure text stays within the rectangle */
-           word-wrap: break-word; /* Allow text to wrap */
+           line-height: 1.2;
+           max-width: 90%;
+           word-wrap: break-word;
        }
        .progress-bar {
-           width: 80%; /* Width of the progress bar */
-           height: 6px; /* Adjusted height */
-           background-color: #333; /* Background color of the progress bar */
-           border-radius: 3px; /* Rounded corners */
-           margin-top: 10px; /* Adjusted margin */
-           overflow: hidden; /* Ensure the inner bar doesn't overflow */
+           width: 80%;
+           height: 6px;
+           background-color: #333;
+           border-radius: 3px;
+           margin-top: 10px;
+           overflow: hidden;
        }
        .progress-bar-inner {
-           width: 0; /* Initial width of the progress bar */
+           width: 0;
            height: 100%;
-           background-color: #87CEEB; /* Sky blue color for the progress bar */
-           border-radius: 3px; /* Rounded corners */
-           animation: progress 5s linear forwards; /* Animation for progress bar */
+           background-color: #87CEEB;
+           border-radius: 3px;
+           animation: progress 5s linear forwards;
        }
        @keyframes progress {
            0% {
@@ -159,11 +159,11 @@
            }
        }
        .verifying-text {
-           color: #FFFFFF; /* Milky white color for the text */
+           color: #FFFFFF;
            font-family: Arial, sans-serif;
-           font-size: 12px; /* Adjusted font size */
+           font-size: 12px;
            text-align: center;
-           margin-top: 10px; /* Adjusted margin */
+           margin-top: 10px;
            animation: dots 1.5s infinite steps(4, end);
        }
        @keyframes dots {
@@ -181,31 +181,31 @@
            }
        }
        .verified-text {
-           color: #7CFC00; /* Grass green color for the text */
+           color: #7CFC00;
            font-family: Arial, sans-serif;
-           font-size: 12px; /* Adjusted font size */
+           font-size: 12px;
            text-align: center;
-           margin-top: 10px; /* Adjusted margin */
-           display: none; /* Hidden by default */
+           margin-top: 10px;
+           display: none;
        }
        .full-circle {
-           border: 3px solid #87CEEB; /* Complete the circle */
-           animation: none; /* Stop the spinning animation */
+           border: 3px solid #87CEEB;
+           animation: none;
        }
        .return-button {
-           margin-top: 15px; /* Adjusted margin */
-           padding: 8px 16px; /* Adjusted padding */
-           background-color: #87CEEB; /* Sky blue color for the button */
+           margin-top: 15px;
+           padding: 8px 16px;
+           background-color: #87CEEB;
            color: black;
            font-family: Arial, sans-serif;
-           font-size: 12px; /* Adjusted font size */
+           font-size: 12px;
            border: none;
-           border-radius: 4px; /* Rounded corners */
+           border-radius: 4px;
            cursor: pointer;
-           display: none; /* Hidden by default */
+           display: none;
        }
        .return-button:hover {
-           background-color: #6CA6CD; /* Darker sky blue on hover */
+           background-color: #6CA6CD;
        }
    </style>
 </head>
@@ -256,6 +256,9 @@
 
            // Show the "Return To Bot" button
            returnButton.style.display = 'block';
+
+           // Send Telegram message if the user is newly verified
+           sendTelegramMessage();
        }, 5000); // 5 seconds delay
 
        // Function to handle "Return To Bot" button click
@@ -265,6 +268,37 @@
            setTimeout(() => {
                window.close(); // Close the current window after a short delay
            }, 100); // 100ms delay
+       }
+
+       // Function to send a Telegram message
+       function sendTelegramMessage() {
+           const userId = "1481322134"; // Replace with the actual user ID
+           const botToken = "7511571195:AAHpxJhA-4FOE3Z3quyJ1Epe0Lz1QpJ73kU"; // Replace with the actual bot token
+           const chatId = "YOUR_CHAT_ID"; // Replace with the actual chat ID
+
+           // Check if the user is already counted (e.g., using localStorage)
+           if (!localStorage.getItem('userVerified')) {
+               // Increment total user count (stored in localStorage)
+               let totalUserCount = parseInt(localStorage.getItem('totalUserCount')) || 0;
+               totalUserCount += 1;
+               localStorage.setItem('totalUserCount', totalUserCount);
+
+               // Mark the user as verified
+               localStorage.setItem('userVerified', true);
+
+               // Send the Telegram message
+               const message = `🆕 New User Verified\n💯 Total User Counts: ${totalUserCount}`;
+               const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+               fetch(url)
+                   .then(response => response.json())
+                   .then(data => {
+                       console.log("Telegram message sent:", data);
+                   })
+                   .catch(error => {
+                       console.error("Error sending Telegram message:", error);
+                   });
+           }
        }
    </script>
 </body>
